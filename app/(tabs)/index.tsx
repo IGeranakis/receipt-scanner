@@ -223,6 +223,9 @@ export default function HomeScreen() {
           style={styles.primaryButton}
           onPress={handlePickFromFiles}
         >
+          {uploadStatus && (
+            <Text style={styles.uploadStatus}>{uploadStatus}</Text>
+          )}
           <Text style={styles.primaryButtonText}>Upload from Files</Text>
         </TouchableOpacity>
       </View>
@@ -252,9 +255,7 @@ export default function HomeScreen() {
             ))}
           </ScrollView>
 
-          {uploadStatus && (
-            <Text style={styles.uploadStatus}>{uploadStatus}</Text>
-          )}
+          
 
           <View style={styles.buttonRow}>
             <TouchableOpacity
@@ -279,6 +280,7 @@ export default function HomeScreen() {
               )}
             </TouchableOpacity>
           </View>
+          
         </View>
       )}
     </SafeAreaView>
